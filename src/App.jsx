@@ -20,20 +20,20 @@ const FORM_BLUEPRINTS = {
   form_2: {
     top_date: '',
     gr_no: '',
-    Date: '',
+    gr_date: '',
     receipt_no: '',
     rupees_amount: '',
     rupees_in_words: '',
     customer_name: '',
-    Bank_account_1: '',
+    customer_bracket_info: '',
     from_location: '',
     to_location: '',
-    Bank_account_2: '',
+    truck_bracket_info: '',
     weight_tons: ''
   },
 
   form_3: {
-    To: '',
+    to_line_1: '',
     pin_code: '',
     mobile_no: '',
     gstin_no: '',
@@ -43,6 +43,7 @@ const FORM_BLUEPRINTS = {
     packages_count: '',
     amount_rs: '',
     amount_to: '',
+    to_and: '',
     transportation: '',
     loading: '',
     unloading: '',
