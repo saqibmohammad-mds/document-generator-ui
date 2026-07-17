@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: #071015;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+}
+
+button,
+input {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Main application container */
+
+.app-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.app-title {
+  margin: 0 0 30px;
+  color: #cde97c;
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Form selector tabs */
+
+.tab-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 1. The Inactive (Other) Buttons */
+.tab {
+  background-color: white !important;   /* Makes the other buttons white */
+  color: #161616 !important;            /* Dark text so it's readable */
+  padding: 10px 20px;
+  cursor: pointer;
+  border: 2px solid white !important;
+  border-radius: 8px;
+  font-weight: bold;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+/* 2. The Green Shadow on Hover */
+.tab:hover {
+  box-shadow: 0 0 15px rgba(205, 233, 124, 0.6) !important; /* Saqib Green shadow */
+  border-color: #CDE97C !important;                         /* Matches the shadow */
+}
+
+/* 3. The Selected Button */
+.active-tab {
+  background-color: transparent !important; /* Merges perfectly with your dark background */
+  color: #CDE97C !important;                /* Saqib Green text */
+  border: 2px solid #CDE97C !important;     /* Green outline so it doesn't disappear completely */
+}
+
+.active-tab:hover {
+  background-color: #747bff;
+}
+
+/* Form */
+
+.document-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.field-label {
+  color: #D7F56D;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: left;
+  margin-left:18px;
+  margin-bottom: 0px;
+  letter-spacing: 0.2px;
+}
+
+.input-row {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+}
+
+/* Rounded white inputs, compact like the original */
+
+.form-input {
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  padding: 16px 20px;
+
+  background: #f7f7f7;
+  color: #111;
+
+  border: 2px solid transparent;
+  border-radius: 22px; /* input box border radius*/
+  outline: none;
+
+  font-size: 16px;
+  transition: all 0.25s ease;
+}
+
+/* Empty input */
+.form-input:placeholder-shown {
+  background: #f7f7f7;
+  color: #111;
+}
+
+/* User has typed something */
+.form-input:not(:placeholder-shown) {
+  background: #263449;
+  color: white;
+}
+
+/* Placeholder */
+.form-input::placeholder {
+  color: #7d8791;
+}
+
+/* Hover while empty */
+.form-input:placeholder-shown:hover {
+  background: #D7F56D;
+  color: #111;
+}
+
+/* Hover after text exists */
+.form-input:not(:placeholder-shown):hover {
+  background: #2d3d53;
+}
+
+/* Focus while typing */
+.form-input:focus:not(:placeholder-shown) {
+  background: #263449;
+  color: white;
+
+}
+/* Clear field button */
+
+.clear-button {
+  width: 58px;
+  min-width: 58px;
+  padding: 0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 25px; /* delete box border-radius*/
+
+  background-color: #2B3748;
+  color: #ffffff;
+
+  font-size: 16px;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.clear-button:hover {
+  background-color: #ff646b;
+  transform: translateY(-1px);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.18);
+}
+
+.clear-button:active {
+  transform: translateY(0);
+}
+
+/* Download button */
+
+.submit-button {
+  width: 100%;
+  padding: 15px;
+  margin-top: 10px;
+
+  border: none;
+  border-radius: 18px;
+
+  background-color: #cde97c;
+  color: #071015;
+
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #dcf69a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(205, 233, 124, 0.18);
+}
+
+.submit-button:active {
+  transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 600px) {
+  .app-container {
+    padding: 24px 14px 50px;
+  }
+
+  .app-title {
+    margin-bottom: 24px;
+    font-size: 36px;
+  }
+
+  .tab-container {
+    gap: 8px;
+  }
+
+  .tab {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 8px;
+    font-size: 13px;
+  }
+
+  .field-label {
+    font-size: 15px;
+  }
+
+  .input-row {
+    gap: 8px;
+  }
+
+  .form-input {
+    padding: 11px 16px;
+    border-radius: 22px;
+    font-size: 15px;
+  }
+
+  .clear-button {
+    width: 52px;
+    min-width: 52px;
+    border-radius: 13px;
+  }
+}
